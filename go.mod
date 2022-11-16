@@ -1,4 +1,4 @@
-module sl-go
+module github.com/ijustyce/sl-go-web
 
 go 1.19
 
