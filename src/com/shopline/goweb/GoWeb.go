@@ -1,7 +1,7 @@
 package goweb
 
 type GoWeb interface {
-	Get(path string, handler ...HandlerFunc)
+	Get(path string, handler HandlerFunc)
 
 	Start()
 }
