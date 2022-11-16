@@ -1,8 +1,8 @@
 package main
 
 import (
-	"sl-go/src/com/shopline/goweb"
-	"sl-go/src/com/shopline/goweb/SlGin"
+	"github.com/ijustyce/sl-go-web/src/com/shopline/goweb"
+	"github.com/ijustyce/sl-go-web/src/com/shopline/goweb/SlGin"
 )
 
 func main() {

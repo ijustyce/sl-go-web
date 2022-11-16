@@ -2,7 +2,7 @@ package SlGin
 
 import (
 	"github.com/gin-gonic/gin"
-	"sl-go/src/com/shopline/goweb"
+	"github.com/ijustyce/sl-go-web/src/com/shopline/goweb"
 )
 
 type SlGin struct {

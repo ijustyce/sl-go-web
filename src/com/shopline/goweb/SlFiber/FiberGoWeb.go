@@ -1,9 +1,8 @@
 package SlFiber
 
-import "sl-go/src/com/shopline/goweb"
-
 import (
 	"github.com/gofiber/fiber/v2"
+	"github.com/ijustyce/sl-go-web/src/com/shopline/goweb"
 )
 
 type SlFiber struct {
