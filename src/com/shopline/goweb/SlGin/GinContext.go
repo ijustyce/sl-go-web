@@ -8,7 +8,7 @@ type GinContext struct {
 	context *gin.Context
 }
 
-func (context *GinContext) JSON(code int, obj any) any {
+func (context *GinContext) Response(code int, obj any) any {
 	context.context.JSON(code, obj)
 	return nil
 }
@@ -23,4 +23,16 @@ func (context *GinContext) PathParam(key string, defaultValue string) string {
 		return defaultValue
 	}
 	return value
+}
+
+func (context *GinContext) BindBody(object any) error {
+	return context.context.ShouldBindJSON(object)
+}
+
+func (context *GinContext) BindQueryParams(object any) error {
+	return context.context.ShouldBindQuery(object)
+}
+
+func (context *GinContext) BindPathParams(object any) error {
+	return context.context.ShouldBindUri(object)
 }
