@@ -17,7 +17,7 @@ func Create() *SlFiber {
 		CaseSensitive:            true,
 		StrictRouting:            true,
 		DisableDefaultDate:       false,
-		DisableHeaderNormalizing: true,
+		DisableHeaderNormalizing: false,
 	})
 	return slFiber
 }

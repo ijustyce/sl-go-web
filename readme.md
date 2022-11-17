@@ -15,3 +15,9 @@ go-zero 官方的文档看，性能和 beego 以及 gin 差不多，beego 是国
 
 正如前面所说，可以使用的框架有：gin、go-zero、fiber、echo 等，在尚不清楚未来走向的情况下，使用 go 开发后端，更好的
 办法是自己封装一层，使得应用程序感知不到自己使用的是哪个框架，这便是该项目的用途。
+
+## todo
+- [x] bind header
+- [x] set header
+- [x] get cookie
+- [x] set cookie
