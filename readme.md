@@ -16,8 +16,28 @@ go-zero 官方的文档看，性能和 beego 以及 gin 差不多，beego 是国
 正如前面所说，可以使用的框架有：gin、go-zero、fiber、echo 等，在尚不清楚未来走向的情况下，使用 go 开发后端，更好的
 办法是自己封装一层，使得应用程序感知不到自己使用的是哪个框架，这便是该项目的用途。
 
-## todo
-- [x] bind header
-- [x] set header
-- [x] get cookie
-- [x] set cookie
+## bind 相关
+bind 时，需要添加 tag，
+```go
+type PathParams struct {
+	Name string `uri:"name" params:"name"`
+	Age  string `uri:"age" params:"age"`
+}
+
+type QueryParams struct {
+	Name string `form:"name" query:"name"`
+	Age  string `form:"age" query:"age"`
+}
+
+type Body struct {
+	Name string `json:"name"`
+	Age  string `json:"age"`
+}
+
+type Header struct {
+	ContentType string `header:"Content-type" reqHeader:"Content-type"`
+	UserAgent   string `header:"User-Agent" reqHeader:"User-Agent"`
+	Host        string `header:"Host" reqHeader:"Host"`
+}
+```
+由于同时兼容了 gin 和 fiber 所以 tag 也比较乱，两个框架的 tag 都需要。
