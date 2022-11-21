@@ -20,7 +20,9 @@ func Create(debugMode bool) *SlGin {
 
 	slGin.gin = gin.New()
 	slGin.gin.Use(gin.Recovery())
-	slGin.gin.Use(gin.Logger())
+	if debugMode {
+		slGin.gin.Use(gin.Logger())
+	}
 	return slGin
 }
 
