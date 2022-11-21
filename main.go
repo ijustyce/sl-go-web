@@ -28,7 +28,7 @@ type Header struct {
 }
 
 func main() {
-	goWeb := SlFiber.Create()
+	goWeb := SlFiber.Create(true)
 	goWeb.Get("/api/:name/:age", func(context goweb.SlContext) {
 		var pathParams PathParams
 		err := context.BindPathParams(&pathParams)
@@ -57,7 +57,7 @@ func main() {
 
 	InitWev(goWeb)
 
-	goWeb2 := SlFiber.Create()
+	goWeb2 := SlFiber.Create(true)
 	InitWev(goWeb2)
 
 	err := goWeb.Start(8080)
