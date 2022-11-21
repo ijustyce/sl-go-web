@@ -67,3 +67,7 @@ func (context *GinContext) SetCookie(cookie goweb.Cookie) {
 	context.context.SetCookie(cookie.Name, cookie.Value, cookie.MaxAge, cookie.Path,
 		cookie.Domain, cookie.Secure, cookie.HTTPOnly)
 }
+
+func (context *GinContext) GetRequestIp() string {
+	return context.context.ClientIP()
+}

@@ -65,6 +65,10 @@ func (context *FiberContext) SetCookie(cookie goweb.Cookie) {
 	context.context.Cookie(&fiberCookie)
 }
 
+func (context *FiberContext) GetRequestIp() string {
+	return context.context.IP()
+}
+
 func toSameSite(SameSite http.SameSite) string {
 	switch SameSite {
 	case http.SameSiteLaxMode:

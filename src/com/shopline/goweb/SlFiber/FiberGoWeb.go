@@ -10,7 +10,7 @@ type SlFiber struct {
 	app *fiber.App
 }
 
-func Create() *SlFiber {
+func Create(debugMode bool) *SlFiber {
 	slFiber := &SlFiber{}
 	slFiber.app = fiber.New(fiber.Config{
 		Prefork:                  false,

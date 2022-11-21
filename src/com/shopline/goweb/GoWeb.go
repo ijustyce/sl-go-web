@@ -28,6 +28,7 @@ type SlContext interface {
 	SetHeader(key string, value string)
 	GetCookie(key string, defaultValue string) string
 	SetCookie(cookie Cookie)
+	GetRequestIp() string
 }
 
 type Cookie struct {

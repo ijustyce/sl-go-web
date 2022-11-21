@@ -10,9 +10,13 @@ type SlGin struct {
 	gin *gin.Engine
 }
 
-func Create() *SlGin {
+func Create(debugMode bool) *SlGin {
 	slGin := &SlGin{}
-	gin.SetMode(gin.ReleaseMode)
+	if debugMode {
+		gin.SetMode(gin.DebugMode)
+	} else {
+		gin.SetMode(gin.ReleaseMode)
+	}
 	slGin.gin = gin.New()
 	slGin.gin.Use(gin.Recovery())
 	return slGin
