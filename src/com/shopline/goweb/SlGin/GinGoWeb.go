@@ -12,13 +12,14 @@ type SlGin struct {
 
 func Create(debugMode bool) *SlGin {
 	slGin := &SlGin{}
+	slGin.gin = gin.New()
+	slGin.gin.Use(gin.Recovery())
+	slGin.gin.Use(gin.Logger())
 	if debugMode {
 		gin.SetMode(gin.DebugMode)
 	} else {
 		gin.SetMode(gin.ReleaseMode)
 	}
-	slGin.gin = gin.New()
-	slGin.gin.Use(gin.Recovery())
 	return slGin
 }
 
